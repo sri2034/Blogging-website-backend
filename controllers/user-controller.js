@@ -49,10 +49,10 @@ const signup = async (req, res, next) => {
                     subject: 'OTP for Email Verification',
                     html: ` 
                         <h4>Hi, ${name} Your Account Verification OTP is: ${otp}</h4>
-                        <i>This is not a spam mail, it is a verification mail from bloggify pro any queries you can write back to us</i><br> 
+                        <i>This is not a spam mail, it is a verification mail from bloggify pro(Bloging Website) any queries you can write back to us</i><br> 
                         <i>Your password is ${password} (You can use a new password if could not verify the password this time)</i><br>
                         <h5><i>Below is our Website if you can't verify otp please use website link to reverify and complete signup</i></h5>
-                        <a href="https://blogging-website-frontend.vercel.app/">Bloggify Pro</a>
+                        <a href="https://blogging-website-frontend.vercel.app/">Bloggify Pro ... Write What's in Your Mind</a>
                         <h6><i>Regards KPS(........)</i></h6> `,
                 };
         
@@ -89,16 +89,16 @@ const signup = async (req, res, next) => {
     await user.save();
     try {
         const mailOptions = {
-                from: 'validate.bloggifypro@gmail.com',
-                to: email,
-                subject: 'OTP for Email Verification',
-                html: ` 
-                    <h4>Hi, ${name} Your Account Verification OTP is: ${otp}</h4>
-                    <i>This is not a spam mail, it is a verification mail from bloggify pro any queries you can write back to us</i><br> 
-                    <i>Your password is ${password} (You can use a new password if could not verify the password this time)</i><br>
-                    <h5><i>Below is our Website if you can't verify otp please use website link to reverify and complete signup</i></h5>
-                    <a href="https://blogging-website-frontend.vercel.app/">Bloggify Pro</a>
-                    <h6><i>Regards KPS(........)</i></h6> `,
+                    from: 'validate.bloggifypro@gmail.com',
+                    to: email,
+                    subject: 'OTP for Email Verification',
+                    html: ` 
+                        <h4>Hi, ${name} Your Account Verification OTP is: ${otp}</h4>
+                        <i>This is not a spam mail, it is a verification mail from bloggify pro(Bloging Website) any queries you can write back to us</i><br> 
+                        <i>Your password is ${password} (You can use a new password if could not verify the password this time)</i><br>
+                        <h5><i>Below is our Website if you can't verify otp please use website link to reverify and complete signup</i></h5>
+                        <a href="https://blogging-website-frontend.vercel.app/">Bloggify Pro ... Write What's in Your Mind</a>
+                        <h6><i>Regards KPS(........)</i></h6> `,
                 };
 
         transporter.sendMail(mailOptions, (error, info) => {
