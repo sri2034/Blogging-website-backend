@@ -89,7 +89,6 @@ const signup = async (req, res, next) => {
     await user.save();
     try {
         const mailOptions = {
-            const mailOptions = {
                 from: 'validate.bloggifypro@gmail.com',
                 to: email,
                 subject: 'OTP for Email Verification',
