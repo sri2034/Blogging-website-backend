@@ -7,8 +7,8 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'test.backendverify@gmail.com',
-      pass: 'kkfapdrqmihzoyat',
+      user: 'bloggifypro.verify@gmail.com',
+      pass: 'Blogify@2023',
     },
 });
 
@@ -44,10 +44,10 @@ const signup = async (req, res, next) => {
             await existingUser.save();
             try {
                 const mailOptions = {
-                    from: 'test.backendverify@gmail.com',
+                    from: 'bloggifypro.verify@gmail.com',
                     to: email,
                     subject: 'OTP for Email Verification',
-                    text: `Your OTP is: ${otp}`,
+                    text: `Your OTP is: ${otp} this is not a spam mail, it is a verification mail from bloggify pro any queries you can write back to us and this is our website https://blogging-website-frontend.vercel.app/ `,
                 };
         
                 transporter.sendMail(mailOptions, (error, info) => {
@@ -83,10 +83,10 @@ const signup = async (req, res, next) => {
     await user.save();
     try {
         const mailOptions = {
-            from: 'test.backendverify@gmail.com',
+            from: 'bloggifypro.verify@gmail.com',
             to: email,
             subject: 'OTP for Email Verification',
-            text: `Your OTP is: ${otp}`,
+            text: `Your OTP is: ${otp} this is not a spam mail, it is a verification mail from bloggify pro any queries you can write back to us and this is our website https://blogging-website-frontend.vercel.app/ `,
         };
 
         transporter.sendMail(mailOptions, (error, info) => {
