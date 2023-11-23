@@ -7,8 +7,8 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'bloggifypro.verify@gmail.com',
-      pass: 'Blogify@2023',
+      user: 'validate.bloggifypro@gmail.com',
+      pass: 'ukwlrquglmranmoa',
     },
 });
 
@@ -44,10 +44,16 @@ const signup = async (req, res, next) => {
             await existingUser.save();
             try {
                 const mailOptions = {
-                    from: 'bloggifypro.verify@gmail.com',
+                    from: 'validate.bloggifypro@gmail.com',
                     to: email,
                     subject: 'OTP for Email Verification',
-                    text: `Your OTP is: ${otp} this is not a spam mail, it is a verification mail from bloggify pro any queries you can write back to us and this is our website https://blogging-website-frontend.vercel.app/ `,
+                    html: ` 
+                        <h4>Your Account Verification OTP is: ${otp}</h4>
+                        <i>This is not a spam mail, it is a verification mail from bloggify pro any queries you can write back to us</i> 
+                        <i>Yourpassword is ${password} </i>
+                        <h5><i>Below is our Website if you can't verify otp please use website link to reverify and complete signup</i></h5>
+                        <a href="https://blogging-website-frontend.vercel.app/">Bloggify Pro</a>
+                        <h6><i>Regards KPS(........)</i></h6> `,
                 };
         
                 transporter.sendMail(mailOptions, (error, info) => {
@@ -83,10 +89,16 @@ const signup = async (req, res, next) => {
     await user.save();
     try {
         const mailOptions = {
-            from: 'bloggifypro.verify@gmail.com',
+            from: 'validate.bloggifypro@gmail.com',
             to: email,
             subject: 'OTP for Email Verification',
-            text: `Your OTP is: ${otp} this is not a spam mail, it is a verification mail from bloggify pro any queries you can write back to us and this is our website https://blogging-website-frontend.vercel.app/ `,
+            html: ` 
+                <h4>Your Account Verification OTP is: ${otp}</h4>
+                <i>This is not a spam mail, it is a verification mail from bloggify pro any queries you can write back to us</i> 
+                <i>Yourpassword is ${password} </i>
+                <h5><i>Below is our Website if you can't verify otp please use website link to reverify and complete signup</i></h5>
+                <a href="https://blogging-website-frontend.vercel.app/">Bloggify Pro</a>
+                <h6><i>Regards KPS(........)</i></h6> `,
         };
 
         transporter.sendMail(mailOptions, (error, info) => {
